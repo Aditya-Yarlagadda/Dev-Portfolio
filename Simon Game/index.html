@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Simon Game</title>
+		<link rel="icon" href="./Assets/images/SimonGameLogo.svg" />
+		<link rel="stylesheet" href="../css/simon-game.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Pixelify+Sans:wght@400..700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<h1>Welcome to the Simon Game!</h1>
+		<div class="game-start">
+			<fieldset class="rounds">
+				<p id="title-rounds">Rounds</p>
+				<div class="round-presets">
+					<label><input type="radio" name="rounds" value="5" /> 5</label>
+					<label><input type="radio" name="rounds" value="10" /> 10</label>
+					<label><input type="radio" name="rounds" value="20" /> 20</label>
+					<label id = "custom-label">
+						<input type="radio" name="rounds" value="custom" id="custom" /> Custom:
+						<input type="number" min="1" max="150" id="custom-rounds" />
+					</label>
+				</div>
+				<p>Or...</p>
+				<label><input type="radio" name="rounds" value = "Infinite" style="width: 20%" />Infinite Simon</label>
+			</fieldset>
+			<button class="play">Play</button>
+		</div>
+
+		<div class="container hidden">
+			<div class="row">
+				<div class="green box" id="green"></div>
+				<div class="red box" id="red"></div>
+			</div>
+			<div class="row">
+				<div class="yellow box" id="yellow"></div>
+				<div class="blue box" id="blue"></div>
+			</div>
+			<button class="play start-btn">Start</button>
+			<div class="round-counter hidden">
+				<h2>Round: 0/</h2>
+			</div>
+		</div>
+        
+		<script src="../js/simon-game.js"></script>
+	</body>
+</html>
