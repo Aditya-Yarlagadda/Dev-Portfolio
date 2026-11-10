@@ -87,17 +87,19 @@ function gameLogic(event) {
 }
 
 function playGame() {
-	if (currentRound === roundCount) {
-		console.log("Game over");
-		$("h1").innerHTML = "Game Over, You Win!";
-		let audio = new Audio("Assets/sounds/winner.mp3")
-		audio.volume = 0.5;
-		audio.play()
-		$("body").style.backgroundColor = "green"
-		setTimeout(()=> {
-			$("body").style.backgroundColor = "#011f3f";
-		}, 1000)
+	if (roundCount !== "∞") { // only runs if the gamemode is not infinite
+		if (currentRound === roundCount) {
+			console.log("Game over");
+			$("h1").innerHTML = "Game Over, You Win!";
+			let audio = new Audio("Assets/sounds/winner.mp3")
+			audio.volume = 0.5;
+			audio.play()
+			$("body").style.backgroundColor = "green"
+			setTimeout(()=> {
+				$("body").style.backgroundColor = "#011f3f";
+			}, 1000)
 		return;
+		}
 	}
 	currentRound += 1; // tells the game the current round count.
 	$(".round-counter h2").innerHTML = `Round: ${currentRound}/${roundCount}`;
@@ -129,7 +131,8 @@ function rushOut(el) {
 		} else if (gameMode === "Infinite") {
 			console.log(gameMode);
 			$(".round-counter h2").innerHTML = "Round: 1/∞"
-			// pass
+			roundCount = "∞"
+			playGame();
 		} else {
 			console.log(Number(gameMode));
 			roundCount = Number(gameMode); //sets the round count based on the option the player chose.
