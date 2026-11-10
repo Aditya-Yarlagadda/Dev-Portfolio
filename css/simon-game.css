@@ -85,7 +85,7 @@ h1 {
 	margin-bottom: 2%;
 	font-family: "Pixelify Sans", monospace;
 	color: #fef2bf;
-	font-size: clamp(2rem, 10vh, 4.5rem);
+	font-size: clamp(1rem, 5vw + 1rem, 4.5rem);
 	max-width: 85%;
 }
 
